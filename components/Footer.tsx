@@ -29,12 +29,13 @@ export const Footer: React.FC = () => {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6">Hardware</h4>
+            <h4 className="text-white font-bold mb-6">Industries</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-orwell-500">Or1 Workstation</a></li>
-              <li><a href="#" className="hover:text-orwell-500">OrMax Server</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Datasheets</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Colocation Partners</a></li>
+              <li><a href="/healthcare" className="hover:text-orwell-500">Healthcare</a></li>
+              <li><a href="/legal" className="hover:text-orwell-500">Legal</a></li>
+              <li><a href="/finance" className="hover:text-orwell-500">Finance</a></li>
+              <li><a href="/logistics" className="hover:text-orwell-500">Logistics</a></li>
+              <li><a href="/government" className="hover:text-orwell-500">Government</a></li>
             </ul>
           </div>
 

@@ -19,7 +19,7 @@ const ServiceCard = ({ title, desc, icon: Icon }: any) => (
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 bg-zinc-950">
+    <section id="services" className="py-24 bg-zinc-950 border-b border-zinc-800">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-4xl text-white mb-4">BESPOKE INTELLIGENCE. <br />DELIVERED.</h2>

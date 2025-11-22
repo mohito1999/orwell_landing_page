@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -9,9 +9,34 @@ import { Finance } from './pages/Finance';
 import { Logistics } from './pages/Logistics';
 import { Government } from './pages/Government';
 
+function ScrollToHash() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // Retry after a small delay to allow for rendering
+        setTimeout(() => {
+          const el = document.getElementById(id);
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToHash />
       <div className="min-h-screen bg-zinc-950 text-white selection:bg-orwell-500/30">
         <Navbar />
         <Routes>

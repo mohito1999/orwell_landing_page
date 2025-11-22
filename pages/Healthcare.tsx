@@ -54,7 +54,7 @@ export function Healthcare() {
                             <span className="text-orwell-500 font-mono text-sm tracking-wider uppercase">Healthcare</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
-                            HIPAA-Compliant AI.
+                            Compliant AI. <br />
                             <span className="text-orwell-500"> In Your VPC.</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-xl leading-relaxed mb-10">
