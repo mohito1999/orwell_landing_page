@@ -1,25 +1,56 @@
-import React from 'react';
-import { Eye, Menu, X } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye, Menu, X, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export const Navbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+export function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="bg-orwell-500 p-1.5 rounded-sm">
-              <Eye className="w-5 h-5 text-zinc-950" />
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-10 h-10 bg-orwell-500 rounded-sm flex items-center justify-center group-hover:bg-orwell-600 transition-colors">
+              <Eye className="text-white w-6 h-6" />
             </div>
             <span className="font-display font-bold text-xl tracking-tight text-white">ORWELL</span>
-          </div>
+          </Link>
 
           <div className="hidden md:flex items-center gap-8">
-            <a href="#platform" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Platform</a>
-            <a href="#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Hardware</a>
-            <a href="#ahoy" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Ahoy! Voice</a>
-            <a href="#services" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Services</a>
+            <Link to="/#platform" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Platform</Link>
+
+            {/* Industries Dropdown */}
+            <div className="relative group">
+              <button
+                className="flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono"
+                onMouseEnter={() => setIsIndustriesOpen(true)}
+                onMouseLeave={() => setIsIndustriesOpen(false)}
+              >
+                Industries <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 w-48 bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-200 ${isIndustriesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}
+                onMouseEnter={() => setIsIndustriesOpen(true)}
+                onMouseLeave={() => setIsIndustriesOpen(false)}
+              >
+                <Link to="/healthcare" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                  Healthcare
+                </Link>
+                <div className="px-4 py-3 text-sm text-zinc-600 font-mono cursor-not-allowed flex justify-between items-center">
+                  Finance <span className="text-[10px] border border-zinc-700 px-1 rounded">SOON</span>
+                </div>
+                <div className="px-4 py-3 text-sm text-zinc-600 font-mono cursor-not-allowed flex justify-between items-center">
+                  Logistics <span className="text-[10px] border border-zinc-700 px-1 rounded">SOON</span>
+                </div>
+              </div>
+            </div>
+
+            <Link to="/#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Hardware</Link>
+            <Link to="/#ahoy" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Ahoy! Voice</Link>
+            <Link to="/#services" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Services</Link>
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -31,7 +62,7 @@ export const Navbar = () => {
             </button>
           </div>
 
-          <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          <button className="md:hidden text-zinc-400" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -39,12 +70,20 @@ export const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-zinc-950 border-b border-zinc-800">
+        <div className="md:hidden border-t border-zinc-800 bg-zinc-950 absolute w-full">
           <div className="px-6 py-4 space-y-4 flex flex-col">
-            <a href="#platform" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Platform</a>
-            <a href="#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Hardware</a>
-            <a href="#ahoy" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Ahoy! Voice</a>
-            <a href="#services" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Services</a>
+            <Link to="/#platform" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Platform</Link>
+
+            <div className="space-y-2 pl-4 border-l border-zinc-800">
+              <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Industries</span>
+              <Link to="/healthcare" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Healthcare</Link>
+              <span className="block text-sm font-medium text-zinc-600 font-mono">Finance (Soon)</span>
+              <span className="block text-sm font-medium text-zinc-600 font-mono">Logistics (Soon)</span>
+            </div>
+
+            <Link to="/#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Hardware</Link>
+            <Link to="/#ahoy" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Ahoy! Voice</Link>
+            <Link to="/#services" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Services</Link>
             <button className="w-full px-4 py-2 text-sm font-medium text-zinc-400 hover:text-white border border-zinc-800 hover:border-zinc-600 rounded-sm transition-all font-mono">
               Documentation
             </button>
