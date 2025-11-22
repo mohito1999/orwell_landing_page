@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter', sans-serif;
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --color-orwell-50: #fff7ed;
+    --color-orwell-100: #ffedd5;
+    --color-orwell-200: #fed7aa;
+    --color-orwell-300: #fdba74;
+    --color-orwell-400: #fb923c;
+    --color-orwell-500: #f97316;
+    --color-orwell-600: #ea580c;
+    --color-orwell-700: #c2410c;
+    --color-orwell-800: #9a3412;
+    --color-orwell-900: #7c2d12;
+    --color-orwell-950: #09090b;
+}
+
+body {
+    background-color: #09090b;
+    color: #fafafa;
+}
+
+.grid-bg {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar for "Blocky" aesthetic */
+::-webkit-scrollbar {
+    width: 12px;
+    background: #09090b;
+}
+
+::-webkit-scrollbar-track {
+    background: #09090b;
+    border-left: 1px solid #27272a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border: 2px solid #09090b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f97316;
+    /* Orwell Orange on hover */
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.perspective-1000 {
+    perspective: 1000px;
+}
