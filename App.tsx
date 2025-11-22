@@ -35,7 +35,7 @@ function ScrollToHash() {
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <ScrollToHash />
       <div className="min-h-screen bg-zinc-950 text-white selection:bg-orwell-500/30">
         <Navbar />
