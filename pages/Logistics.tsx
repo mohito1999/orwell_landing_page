@@ -1,0 +1,248 @@
+import React, { useState } from 'react';
+import { Shield, Truck, FileText, Network, CheckCircle, Lock, ArrowRight, Database, Server, MapPin, Search, Box, Activity, AlertTriangle, Globe } from 'lucide-react';
+
+export function Logistics() {
+    const [activeUseCase, setActiveUseCase] = useState(0);
+
+    const useCases = [
+        {
+            title: "Dynamic Routing",
+            description: "Real-time route optimization based on traffic, weather, and fuel costs. Reduce delivery times by 20%.",
+            stats: "15% Fuel Savings",
+            graph: [
+                { label: "Ingest Orders", icon: Box, color: "text-zinc-400", bg: "bg-zinc-400/10", border: "border-zinc-400/20" },
+                { label: "Traffic Analysis", icon: Globe, color: "text-blue-400", bg: "bg-blue-400/10", border: "border-blue-400/20" },
+                { label: "Optimize Route", icon: MapPin, color: "text-orwell-500", bg: "bg-orwell-500/10", border: "border-orwell-500/20" },
+                { label: "Dispatch Driver", icon: Truck, color: "text-green-400", bg: "bg-green-400/10", border: "border-green-400/20" }
+            ]
+        },
+        {
+            title: "Smart Documentation",
+            description: "Automate processing of Bills of Lading, Customs forms, and Invoices. Clear customs faster.",
+            stats: "99% Accuracy",
+            graph: [
+                { label: "Scan Document", icon: FileText, color: "text-zinc-400", bg: "bg-zinc-400/10", border: "border-zinc-400/20" },
+                { label: "OCR Extraction", icon: Search, color: "text-purple-400", bg: "bg-purple-400/10", border: "border-purple-400/20" },
+                { label: "Validate Data", icon: CheckCircle, color: "text-orwell-500", bg: "bg-orwell-500/10", border: "border-orwell-500/20" },
+                { label: "Submit to ERP", icon: Database, color: "text-green-400", bg: "bg-green-400/10", border: "border-green-400/20" }
+            ]
+        },
+        {
+            title: "Predictive Maintenance",
+            description: "Analyze IoT sensor data to predict vehicle failures before they happen. Keep your fleet on the road.",
+            stats: "30% Less Downtime",
+            graph: [
+                { label: "IoT Stream", icon: Activity, color: "text-zinc-400", bg: "bg-zinc-400/10", border: "border-zinc-400/20" },
+                { label: "Anomaly Check", icon: AlertTriangle, color: "text-yellow-400", bg: "bg-yellow-400/10", border: "border-yellow-400/20" },
+                { label: "Predict Failure", icon: Search, color: "text-orwell-500", bg: "bg-orwell-500/10", border: "border-orwell-500/20" },
+                { label: "Schedule Repair", icon: Truck, color: "text-green-400", bg: "bg-green-400/10", border: "border-green-400/20" }
+            ]
+        }
+    ];
+
+    return (
+        <div className="min-h-screen bg-zinc-950 text-white pt-20">
+            {/* Hero Section */}
+            <section className="py-24 px-6 border-b border-zinc-800 relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-orwell-500/10 via-transparent to-transparent"></div>
+                <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="p-2 bg-orwell-500/10 border border-orwell-500/20 rounded-sm">
+                                <Truck className="w-6 h-6 text-orwell-500" />
+                            </div>
+                            <span className="text-orwell-500 font-mono text-sm tracking-wider uppercase">Logistics</span>
+                        </div>
+                        <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
+                            AI for Logistics. <span className="text-orwell-500"> In Your VPC.</span>
+                        </h1>
+                        <p className="text-xl text-zinc-400 max-w-xl leading-relaxed mb-10">
+                            Optimize routes, automate documentation, and predict maintenance needs.
+                            Secure your supply chain data.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <button className="bg-orwell-500 text-white px-8 py-4 font-bold hover:bg-orwell-600 transition-all rounded-sm font-mono flex items-center gap-2 group">
+                                Book a Demo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <button className="px-8 py-4 text-zinc-300 border border-zinc-800 hover:border-zinc-600 hover:text-white transition-all rounded-sm font-mono">
+                                View Specs
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Hero Visual */}
+                    <div className="relative h-[400px] hidden lg:flex items-center justify-center">
+                        <div className="absolute inset-0 bg-orwell-500/5 blur-3xl rounded-full"></div>
+                        <div className="relative z-10 w-64 h-64 bg-zinc-900 border border-zinc-800 rounded-sm flex items-center justify-center shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-700">
+                            <div className="absolute inset-0 grid-bg opacity-20"></div>
+                            <Truck className="w-32 h-32 text-orwell-500 opacity-80" />
+
+                            {/* Floating Elements */}
+                            <div className="absolute -top-6 -right-6 bg-zinc-950 border border-zinc-800 p-4 rounded-sm shadow-xl animate-pulse">
+                                <MapPin className="w-6 h-6 text-green-500" />
+                            </div>
+                            <div className="absolute -bottom-6 -left-6 bg-zinc-950 border border-zinc-800 p-4 rounded-sm shadow-xl">
+                                <Box className="w-6 h-6 text-blue-500" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Problem Section */}
+            <section className="py-24 bg-zinc-900/30 border-b border-zinc-800">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold mb-4">The Supply Chain Crunch</h2>
+                        <p className="text-zinc-400 max-w-2xl mx-auto">
+                            Logistics operations are breaking under the weight of inefficiency, manual paperwork, and blind spots.
+                        </p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-zinc-950 border border-zinc-800 p-8 hover:border-zinc-700 transition-colors group">
+                            <div className="w-12 h-12 bg-orange-500/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
+                                <MapPin className="w-6 h-6 text-orange-500" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Route Inefficiency</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Static routing fails to account for real-time conditions, leading to wasted fuel and missed delivery windows.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-950 border border-zinc-800 p-8 hover:border-zinc-700 transition-colors group">
+                            <div className="w-12 h-12 bg-orange-500/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
+                                <FileText className="w-6 h-6 text-orange-500" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Customs Delays</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Manual data entry errors in customs documentation cause shipments to be held up at borders for days.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-950 border border-zinc-800 p-8 hover:border-zinc-700 transition-colors group">
+                            <div className="w-12 h-12 bg-orange-500/10 rounded-sm flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
+                                <Activity className="w-6 h-6 text-orange-500" />
+                            </div>
+                            <h3 className="text-xl font-bold text-white mb-3">Blind Spots</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Lack of real-time visibility into asset health leads to unexpected breakdowns and costly downtime.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Orchestrator Carousel */}
+            <section className="py-24 bg-zinc-900/50 border-b border-zinc-800">
+                <div className="max-w-7xl mx-auto px-6">
+                    <div className="mb-16">
+                        <h2 className="text-3xl font-bold mb-4">Automate Logistics</h2>
+                        <p className="text-zinc-400">Select a workflow to see how Orwell orchestrates the process.</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                        {/* Left: Use Case List */}
+                        <div className="lg:col-span-4 flex flex-col gap-4">
+                            {useCases.map((useCase, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setActiveUseCase(index)}
+                                    className={`text-left p-6 border rounded-sm transition-all ${activeUseCase === index
+                                        ? 'bg-zinc-900 border-orwell-500 shadow-[0_0_20px_rgba(249,115,22,0.1)]'
+                                        : 'bg-zinc-950 border-zinc-800 hover:border-zinc-700'
+                                        }`}
+                                >
+                                    <h3 className={`font-bold text-lg mb-2 ${activeUseCase === index ? 'text-white' : 'text-zinc-400'}`}>
+                                        {useCase.title}
+                                    </h3>
+                                    <p className="text-sm text-zinc-500 leading-relaxed mb-4">{useCase.description}</p>
+                                    <div className="flex items-center gap-2 text-xs font-mono text-orwell-500">
+                                        <Activity className="w-3 h-3" />
+                                        {useCase.stats}
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
+
+                        {/* Right: Visual Graph */}
+                        <div className="lg:col-span-8 bg-zinc-950 border border-zinc-800 rounded-sm p-8 relative overflow-hidden flex items-center justify-center min-h-[500px]">
+                            <div className="absolute inset-0 grid-bg opacity-30"></div>
+
+                            {/* Animated Graph Nodes */}
+                            <div className="relative z-10 flex flex-col md:flex-row items-center gap-4 md:gap-8 w-full justify-center">
+                                {useCases[activeUseCase].graph.map((node, i) => (
+                                    <React.Fragment key={i}>
+                                        {/* Node */}
+                                        <div className={`flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-500 delay-${i * 100} fill-mode-forwards`}>
+                                            <div className={`w-20 h-20 rounded-sm ${node.bg} ${node.border} border flex items-center justify-center relative group cursor-pointer hover:scale-105 transition-transform`}>
+                                                <node.icon className={`w-8 h-8 ${node.color}`} />
+                                                {/* Pulse Effect for active node look */}
+                                                <div className={`absolute inset-0 ${node.bg} opacity-0 group-hover:opacity-100 transition-opacity blur-lg`}></div>
+                                            </div>
+                                            <span className="text-xs font-mono text-zinc-400 text-center max-w-[100px]">{node.label}</span>
+                                        </div>
+
+                                        {/* Connector Arrow (except last item) */}
+                                        {i < useCases[activeUseCase].graph.length - 1 && (
+                                            <div className="hidden md:flex flex-1 h-px bg-zinc-800 relative w-12 shrink-0">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-orwell-500 to-transparent animate-pulse"></div>
+                                            </div>
+                                        )}
+                                        {/* Mobile Connector */}
+                                        {i < useCases[activeUseCase].graph.length - 1 && (
+                                            <div className="md:hidden w-px h-12 bg-zinc-800 relative">
+                                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-orwell-500 to-transparent animate-pulse"></div>
+                                            </div>
+                                        )}
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Compliance Features */}
+            <section className="py-24 px-6 border-b border-zinc-800">
+                <div className="max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-zinc-900 border border-zinc-800 p-8">
+                            <Shield className="w-10 h-10 text-blue-500 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">Data Sovereignty</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Ensure your supply chain data stays within your jurisdiction and control.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-900 border border-zinc-800 p-8">
+                            <Server className="w-10 h-10 text-purple-500 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">On-Premise First</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Deploy edge nodes at distribution centers for low-latency processing without cloud dependency.
+                            </p>
+                        </div>
+                        <div className="bg-zinc-900 border border-zinc-800 p-8">
+                            <Lock className="w-10 h-10 text-orwell-500 mb-6" />
+                            <h3 className="text-xl font-bold text-white mb-4">ISO 27001</h3>
+                            <p className="text-zinc-400 leading-relaxed">
+                                Certified information security management to protect your sensitive trade secrets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-32 px-6 bg-zinc-900 border-t border-zinc-800 relative overflow-hidden">
+                <div className="max-w-4xl mx-auto text-center relative z-10">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to Optimize Your Supply Chain?</h2>
+                    <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto">
+                        Join leading logistics providers using Orwell to drive efficiency and visibility.
+                    </p>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-6">
+                        <button className="bg-orwell-500 text-white px-10 py-5 text-lg font-bold hover:bg-orwell-600 transition-all rounded-sm font-mono w-full md:w-auto">
+                            Book a Demo
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    );
+}

@@ -36,7 +36,7 @@ export const Services: React.FC = () => {
           />
           <ServiceCard
             title="Domain-Specific Fine-Tuning"
-            desc="We take open weights (Llama 3, Mistral) and inject your DNA. Your jargon, your compliance rules, your tone—baked into the model weights."
+            desc="We take open weights (Qwen, Kimi) and inject your DNA. Your jargon, your compliance rules, your tone—baked into the model weights."
             icon={Wrench}
           />
           <ServiceCard

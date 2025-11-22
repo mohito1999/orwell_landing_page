@@ -39,12 +39,18 @@ export function Navbar() {
                 <Link to="/healthcare" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
                   Healthcare
                 </Link>
-                <div className="px-4 py-3 text-sm text-zinc-600 font-mono cursor-not-allowed flex justify-between items-center">
-                  Finance <span className="text-[10px] border border-zinc-700 px-1 rounded">SOON</span>
-                </div>
-                <div className="px-4 py-3 text-sm text-zinc-600 font-mono cursor-not-allowed flex justify-between items-center">
-                  Logistics <span className="text-[10px] border border-zinc-700 px-1 rounded">SOON</span>
-                </div>
+                <Link to="/legal" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                  Legal
+                </Link>
+                <Link to="/finance" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                  Finance
+                </Link>
+                <Link to="/logistics" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                  Logistics
+                </Link>
+                <Link to="/government" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                  Government
+                </Link>
               </div>
             </div>
 
@@ -77,8 +83,10 @@ export function Navbar() {
             <div className="space-y-2 pl-4 border-l border-zinc-800">
               <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Industries</span>
               <Link to="/healthcare" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Healthcare</Link>
-              <span className="block text-sm font-medium text-zinc-600 font-mono">Finance (Soon)</span>
-              <span className="block text-sm font-medium text-zinc-600 font-mono">Logistics (Soon)</span>
+              <Link to="/legal" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Legal</Link>
+              <Link to="/finance" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Finance</Link>
+              <Link to="/logistics" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Logistics</Link>
+              <Link to="/government" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Government</Link>
             </div>
 
             <Link to="/#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Hardware</Link>
