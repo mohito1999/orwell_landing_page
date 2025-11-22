@@ -1,5 +1,4 @@
-import React from 'react';
-import { Eye, Twitter, Github, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   return (
@@ -20,32 +19,32 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-orwell-500">Orchestration Engine</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Vector Memory</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Hallucination Guardrails</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Image Gen</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Audit & Logging</a></li>
+              <li><Link to="/#platform" className="hover:text-orwell-500">Orchestration Engine</Link></li>
+              <li><Link to="/#platform" className="hover:text-orwell-500">Vector Memory</Link></li>
+              <li><Link to="/#platform" className="hover:text-orwell-500">Hallucination Guardrails</Link></li>
+              <li><Link to="/#platform" className="hover:text-orwell-500">Image Gen</Link></li>
+              <li><Link to="/#platform" className="hover:text-orwell-500">Audit & Logging</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">Industries</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="/healthcare" className="hover:text-orwell-500">Healthcare</a></li>
-              <li><a href="/legal" className="hover:text-orwell-500">Legal</a></li>
-              <li><a href="/finance" className="hover:text-orwell-500">Finance</a></li>
-              <li><a href="/logistics" className="hover:text-orwell-500">Logistics</a></li>
-              <li><a href="/government" className="hover:text-orwell-500">Government</a></li>
+              <li><Link to="/healthcare" className="hover:text-orwell-500">Healthcare</Link></li>
+              <li><Link to="/legal" className="hover:text-orwell-500">Legal</Link></li>
+              <li><Link to="/finance" className="hover:text-orwell-500">Finance</Link></li>
+              <li><Link to="/logistics" className="hover:text-orwell-500">Logistics</Link></li>
+              <li><Link to="/government" className="hover:text-orwell-500">Government</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6">Company</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-orwell-500">About Us</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Careers</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Blog</a></li>
-              <li><a href="#" className="hover:text-orwell-500">Contact Sales</a></li>
+              <li><Link to="/#about" className="hover:text-orwell-500">About Us</Link></li>
+              <li><Link to="/#careers" className="hover:text-orwell-500">Careers</Link></li>
+              <li><Link to="/#blog" className="hover:text-orwell-500">Blog</Link></li>
+              <li><Link to="/#contact" className="hover:text-orwell-500">Contact Sales</Link></li>
             </ul>
           </div>
         </div>
