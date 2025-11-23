@@ -21,11 +21,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="text-white font-bold mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><Link to="/#platform" className="hover:text-orwell-500">Orchestration Engine</Link></li>
-              <li><Link to="/#platform" className="hover:text-orwell-500">Vector Memory</Link></li>
-              <li><Link to="/#platform" className="hover:text-orwell-500">Hallucination Guardrails</Link></li>
-              <li><Link to="/#platform" className="hover:text-orwell-500">Image Gen</Link></li>
-              <li><Link to="/#platform" className="hover:text-orwell-500">Audit & Logging</Link></li>
+              <li><Link to="/orchestration" className="hover:text-orwell-500">Orchestration Engine</Link></li>
+              <li><Link to="/vector-memory" className="hover:text-orwell-500">Vector Memory</Link></li>
+              <li><Link to="/guardrails" className="hover:text-orwell-500">Hallucination Guardrails</Link></li>
+              <li><Link to="/audit-logging" className="hover:text-orwell-500">Audit & Logging</Link></li>
             </ul>
           </div>
 

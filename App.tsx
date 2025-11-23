@@ -11,6 +11,10 @@ import { Government } from './pages/Government';
 import { Sales } from './pages/Sales';
 import { Support } from './pages/Support';
 import { WorkflowAutomation } from './pages/WorkflowAutomation';
+import { Orchestration } from './pages/Orchestration';
+import { VectorMemory } from './pages/VectorMemory';
+import { Guardrails } from './pages/Guardrails';
+import { AuditLogging } from './pages/AuditLogging';
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
@@ -52,6 +56,10 @@ function App() {
           <Route path="/sales" element={<Sales />} />
           <Route path="/support" element={<Support />} />
           <Route path="/workflow-automation" element={<WorkflowAutomation />} />
+          <Route path="/orchestration" element={<Orchestration />} />
+          <Route path="/vector-memory" element={<VectorMemory />} />
+          <Route path="/guardrails" element={<Guardrails />} />
+          <Route path="/audit-logging" element={<AuditLogging />} />
         </Routes>
         <Footer />
       </div>
