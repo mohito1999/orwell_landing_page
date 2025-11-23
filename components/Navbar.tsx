@@ -21,36 +21,38 @@ export function Navbar() {
             <Link to="/#platform" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Platform</Link>
 
             {/* Industries Dropdown */}
-            <div className="relative group">
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsIndustriesOpen(true)}
+              onMouseLeave={() => setIsIndustriesOpen(false)}
+            >
               <button
                 className="flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono"
-                onMouseEnter={() => setIsIndustriesOpen(true)}
-                onMouseLeave={() => setIsIndustriesOpen(false)}
               >
                 Industries <ChevronDown className="w-4 h-4" />
               </button>
 
               {/* Dropdown Menu */}
               <div
-                className={`absolute top-full left-0 w-48 bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-200 ${isIndustriesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}
-                onMouseEnter={() => setIsIndustriesOpen(true)}
-                onMouseLeave={() => setIsIndustriesOpen(false)}
+                className={`absolute top-full left-0 w-48 pt-4 transition-all duration-200 ${isIndustriesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}
               >
-                <Link to="/healthcare" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
-                  Healthcare
-                </Link>
-                <Link to="/legal" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
-                  Legal
-                </Link>
-                <Link to="/finance" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
-                  Finance
-                </Link>
-                <Link to="/logistics" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
-                  Logistics
-                </Link>
-                <Link to="/government" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
-                  Government
-                </Link>
+                <div className="bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl">
+                  <Link to="/healthcare" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Healthcare
+                  </Link>
+                  <Link to="/legal" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Legal
+                  </Link>
+                  <Link to="/finance" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Finance
+                  </Link>
+                  <Link to="/logistics" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Logistics
+                  </Link>
+                  <Link to="/government" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Government
+                  </Link>
+                </div>
               </div>
             </div>
 

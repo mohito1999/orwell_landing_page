@@ -54,8 +54,7 @@ export function Government() {
                             <span className="text-orwell-500 font-mono text-sm tracking-wider uppercase">Government</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-display font-bold mb-8 leading-tight">
-                            Sovereign AI for <br />
-                            Nations. <span className="text-orwell-500">In Your VPC.</span>
+                            Sovereign AI for Nations. <span className="text-orwell-500">In Your VPC.</span>
                         </h1>
                         <p className="text-xl text-zinc-400 max-w-xl leading-relaxed mb-10">
                             Empower citizens, optimize infrastructure, and simulate policy impact.
@@ -147,8 +146,8 @@ export function Government() {
                                     key={index}
                                     onClick={() => setActiveUseCase(index)}
                                     className={`text-left p-6 border rounded-sm transition-all ${activeUseCase === index
-                                            ? 'bg-zinc-900 border-orwell-500 shadow-[0_0_20px_rgba(249,115,22,0.1)]'
-                                            : 'bg-zinc-950 border-zinc-800 hover:border-zinc-700'
+                                        ? 'bg-zinc-900 border-orwell-500 shadow-[0_0_20px_rgba(249,115,22,0.1)]'
+                                        : 'bg-zinc-950 border-zinc-800 hover:border-zinc-700'
                                         }`}
                                 >
                                     <h3 className={`font-bold text-lg mb-2 ${activeUseCase === index ? 'text-white' : 'text-zinc-400'}`}>
