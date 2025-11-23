@@ -8,6 +8,9 @@ import { Legal } from './pages/Legal';
 import { Finance } from './pages/Finance';
 import { Logistics } from './pages/Logistics';
 import { Government } from './pages/Government';
+import { Sales } from './pages/Sales';
+import { Support } from './pages/Support';
+import { WorkflowAutomation } from './pages/WorkflowAutomation';
 
 function ScrollToHash() {
   const { pathname, hash } = useLocation();
@@ -46,6 +49,9 @@ function App() {
           <Route path="/finance" element={<Finance />} />
           <Route path="/logistics" element={<Logistics />} />
           <Route path="/government" element={<Government />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/workflow-automation" element={<WorkflowAutomation />} />
         </Routes>
         <Footer />
       </div>

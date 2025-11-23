@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
+  const [isUseCasesOpen, setIsUseCasesOpen] = useState(false);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800">
@@ -56,6 +57,36 @@ export function Navbar() {
               </div>
             </div>
 
+            {/* Use Cases Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setIsUseCasesOpen(true)}
+              onMouseLeave={() => setIsUseCasesOpen(false)}
+            >
+              <button
+                className="flex items-center gap-1 text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono"
+              >
+                Use Cases <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute top-full left-0 w-56 pt-4 transition-all duration-200 ${isUseCasesOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 translate-y-2 invisible'}`}
+              >
+                <div className="bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl">
+                  <Link to="/sales" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Sales & GTM
+                  </Link>
+                  <Link to="/support" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Customer Support
+                  </Link>
+                  <Link to="/workflow-automation" className="block px-4 py-3 text-sm text-zinc-400 hover:text-white hover:bg-zinc-800 transition-colors font-mono border-b border-zinc-800/50">
+                    Workflow Automation
+                  </Link>
+                </div>
+              </div>
+            </div>
+
             <Link to="/#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Hardware</Link>
             <Link to="/#ahoy" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Ahoy! Voice</Link>
             <Link to="/#services" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 transition-colors font-mono">Services</Link>
@@ -89,6 +120,13 @@ export function Navbar() {
               <Link to="/finance" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Finance</Link>
               <Link to="/logistics" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Logistics</Link>
               <Link to="/government" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Government</Link>
+            </div>
+
+            <div className="space-y-2 pl-4 border-l border-zinc-800">
+              <span className="text-xs font-bold text-zinc-500 uppercase tracking-wider">Use Cases</span>
+              <Link to="/sales" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Sales & GTM</Link>
+              <Link to="/support" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Customer Support</Link>
+              <Link to="/workflow-automation" className="block text-sm font-medium text-zinc-300 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Workflow Automation</Link>
             </div>
 
             <Link to="/#hardware" className="text-sm font-medium text-zinc-400 hover:text-orwell-500 font-mono" onClick={() => setIsOpen(false)}>Hardware</Link>
